@@ -1,5 +1,5 @@
 '''
-automate_tweets.py
+automate_tweet_download.py
 
 Runs tweet extraction program once an hour with pre-defined queries
 '''
