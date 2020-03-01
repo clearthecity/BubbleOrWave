@@ -15,9 +15,9 @@ queries = ['#WetsuwetenStrong', '#WetsuwetenSolidarity', '#ShutDownCanada', '#Al
 if __name__ == "__main__":
     try:
         while True:
-            time.sleep(ONE_HOUR)
             for q in queries:
                 tweets_to_json.capture_tweets(q)
             print("Ctrl-C to stop")
+            time.sleep(ONE_HOUR)
     except KeyboardInterrupt:
         print("Automated tweet extraction stopped")

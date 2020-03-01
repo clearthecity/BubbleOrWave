@@ -37,8 +37,14 @@ def capture_tweets(query: str) -> None:
             # entities attribute includes hashtag list (keep True)
 
         with open(filename, 'w') as output:
-            for tweet in tweets:
-                json.dump(tweet, output)
+            output.write('[')
+            for i in range(len(tweets)):
+                json.dump(tweets[i], output)
+                if i != len(tweets)-1:
+                    output.write(',\n')
+                else:
+                    output.write('\n')
+            output.write(']')
 
         print("%s created" % filename)
     except tweepy.RateLimitError:
